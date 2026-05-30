@@ -1,0 +1,9 @@
+export const GAME_WIDTH = window.innerWidth;
+export const GAME_HEIGHT = window.innerHeight;
+export const GRAVITY = 0.25;
+export const JUMP_STRENGTH = -6;
+export const OBSTACLE_WIDTH = 80; // slightly wider for full screen
+export const OBSTACLE_GAP = 250; // much easier gap
+export const OBSTACLE_SPEED_INITIAL = 2.0; // slower obstacles
+export const BIRD_SIZE = 150; // much larger bird
+export const SPAWN_RATE = 3500; // spawn obstacles less frequently for wider horizontal gap
