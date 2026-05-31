@@ -56,12 +56,22 @@ const MainMenu = ({ onStart, highScore, selectedBird, setSelectedBird, soundEnab
       </h1>
 
       {/* Bird Selection & Preview */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginBottom: '30px' }}>
-        <div style={{ color: 'white', fontWeight: 'bold', textShadow: '2px 2px 0 #000', fontSize: '1.2rem', marginBottom: '5px' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginBottom: '30px', width: '100%', padding: '0 10px', boxSizing: 'border-box' }}>
+        <div style={{ color: 'white', fontWeight: 'bold', textShadow: '2px 2px 0 #000', fontSize: '1.2rem', marginBottom: '10px' }}>
           Select Your Character
         </div>
         
-        <div style={{ display: 'flex', gap: '20px' }}>
+        <div style={{ 
+          display: 'flex', 
+          gap: '15px', 
+          flexWrap: 'wrap', 
+          justifyContent: 'center',
+          maxWidth: '400px',
+          background: 'rgba(255, 255, 255, 0.2)',
+          padding: '15px',
+          borderRadius: '20px',
+          boxShadow: 'inset 0 0 10px rgba(0,0,0,0.2)'
+        }}>
           <div onClick={() => setSelectedBird('/bird.png')} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer', transition: 'transform 0.2s', transform: selectedBird === '/bird.png' ? 'scale(1.2)' : 'scale(1)', opacity: selectedBird === '/bird.png' ? 1 : 0.5 }}>
             <img src="/bird.png" alt="Kshitij" style={{ width: 'clamp(60px, 20vw, 80px)', height: 'clamp(60px, 20vw, 80px)', objectFit: 'contain' }} />
             <div style={{ color: 'white', fontWeight: 'bold', textShadow: '1px 1px 0 #000', marginTop: '5px' }}>Kshitij</div>
