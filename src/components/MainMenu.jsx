@@ -25,8 +25,9 @@ const MainMenu = ({ onStart, highScore, selectedBird, setSelectedBird, soundEnab
   return (
     <div style={{
       position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-      zIndex: 100, backgroundColor: 'rgba(88, 199, 243, 0.9)' // sky blue fallback
+      display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start',
+      zIndex: 100, backgroundColor: 'rgba(88, 199, 243, 0.9)', // sky blue fallback
+      overflowY: 'auto', overflowX: 'hidden', padding: '80px 10px 40px 10px', boxSizing: 'border-box'
     }}>
       {/* Top HUD */}
       <div style={{ position: 'absolute', top: '20px', width: '100%', display: 'flex', justifyContent: 'space-between', padding: '0 20px', boxSizing: 'border-box' }}>
