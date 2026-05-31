@@ -1,6 +1,27 @@
 import React from 'react';
 
 const MainMenu = ({ onStart, highScore, selectedBird, setSelectedBird, soundEnabled, setSoundEnabled }) => {
+  const [deferredPrompt, setDeferredPrompt] = React.useState(null);
+
+  React.useEffect(() => {
+    const handleBeforeInstallPrompt = (e) => {
+      e.preventDefault();
+      setDeferredPrompt(e);
+    };
+    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    return () => window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+  }, []);
+
+  const handleInstallClick = async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        setDeferredPrompt(null);
+      }
+    }
+  };
+
   return (
     <div style={{
       position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
@@ -73,6 +94,18 @@ const MainMenu = ({ onStart, highScore, selectedBird, setSelectedBird, soundEnab
       }}>
         <div style={{ width: '0', height: '0', borderTop: '20px solid transparent', borderBottom: '20px solid transparent', borderLeft: '35px solid #7cb342' }}></div>
       </button>
+
+      {/* Install App Button */}
+      {deferredPrompt && (
+        <button onClick={handleInstallClick} style={{ 
+          background: '#ff4757', border: '4px solid #282f3a', borderRadius: '15px', 
+          width: '180px', height: '40px', display: 'flex', justifyContent: 'center', alignItems: 'center',
+          cursor: 'pointer', boxShadow: '0 4px 0 #282f3a', marginBottom: '15px',
+          color: 'white', fontWeight: '900', fontSize: '1.1rem'
+        }}>
+          INSTALL APP
+        </button>
+      )}
 
       {/* Leaderboard Button */}
       <button style={{ 
