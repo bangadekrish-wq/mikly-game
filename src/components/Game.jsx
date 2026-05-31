@@ -250,7 +250,12 @@ const Game = ({ onMenu, highScore, setHighScore, selectedBird, soundEnabled, set
           <img
             src={selectedBird}
             alt="Bird"
-            style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            style={{ 
+              width: '100%', 
+              height: '100%', 
+              objectFit: 'contain',
+              transform: selectedBird === '/bird3.png' ? 'scale(1.75)' : 'none'
+            }}
           />
         </div>
       )}
@@ -314,8 +319,8 @@ const Game = ({ onMenu, highScore, setHighScore, selectedBird, soundEnabled, set
       )}
 
       {/* Audio Elements (User can replace src with actual paths) */}
-      <audio ref={bgMusicRef} src={selectedBird === '/bird2.png' ? "/bg-manjil.mp3" : "/bg-music.mp3"} loop preload="auto" />
-      <audio ref={gameOverMusicRef} src={selectedBird === '/bird.png' ? "/gameover-kshitij.mp3" : "/gameover.mp3"} preload="auto" />
+      <audio ref={bgMusicRef} src={selectedBird === '/bird3.png' ? "/bg-abhinav.mp4" : selectedBird === '/bird2.png' ? "/bg-manjil.mp3" : "/bg-music.mp3"} loop preload="auto" />
+      <audio ref={gameOverMusicRef} src={selectedBird === '/bird3.png' ? "/gameover-abhinav.mp4" : selectedBird === '/bird.png' ? "/gameover-kshitij.mp3" : "/gameover.mp3"} preload="auto" />
     </div>
   );
 };

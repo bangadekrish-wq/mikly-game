@@ -49,6 +49,10 @@ const MainMenu = ({ onStart, highScore, selectedBird, setSelectedBird, soundEnab
             <img src="/bird2.png" alt="Manjil" style={{ width: 'clamp(60px, 20vw, 80px)', height: 'clamp(60px, 20vw, 80px)', objectFit: 'contain' }} />
             <div style={{ color: 'white', fontWeight: 'bold', textShadow: '1px 1px 0 #000', marginTop: '5px' }}>Manjil</div>
           </div>
+          <div onClick={() => setSelectedBird('/bird3.png')} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', cursor: 'pointer', transition: 'transform 0.2s', transform: selectedBird === '/bird3.png' ? 'scale(1.2)' : 'scale(1)', opacity: selectedBird === '/bird3.png' ? 1 : 0.5 }}>
+            <img src="/bird3.png" alt="Abhinav" style={{ width: 'clamp(60px, 20vw, 80px)', height: 'clamp(60px, 20vw, 80px)', objectFit: 'contain' }} />
+            <div style={{ color: 'white', fontWeight: 'bold', textShadow: '1px 1px 0 #000', marginTop: '5px' }}>Abhinav</div>
+          </div>
         </div>
         
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '10px', animation: 'float 1s ease-in-out infinite alternate' }}>
