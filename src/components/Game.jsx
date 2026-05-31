@@ -320,7 +320,7 @@ const Game = ({ onMenu, highScore, setHighScore, selectedBird, soundEnabled, set
 
       {/* Audio Elements (User can replace src with actual paths) */}
       <audio ref={bgMusicRef} src={selectedBird === '/bird4.png' ? "/bg-shabbir.mp3" : selectedBird === '/bird3.png' ? "/bg-abhinav.mp3" : selectedBird === '/bird2.png' ? "/bg-manjil.mp3" : "/bg-music.mp3"} loop preload="auto" />
-      <audio ref={gameOverMusicRef} src={selectedBird === '/bird3.png' ? "/gameover-abhinav.mp3" : selectedBird === '/bird.png' ? "/gameover-kshitij.mp3" : "/gameover.mp3"} preload="auto" />
+      <audio ref={gameOverMusicRef} src={selectedBird === '/bird4.png' ? "/gameover-shabbir.mp3" : selectedBird === '/bird3.png' ? "/gameover-abhinav.mp3" : selectedBird === '/bird.png' ? "/gameover-kshitij.mp3" : "/gameover.mp3"} preload="auto" />
     </div>
   );
 };
