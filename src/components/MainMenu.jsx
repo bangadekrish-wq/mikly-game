@@ -133,7 +133,7 @@ const MainMenu = ({ onStart, highScore, selectedBird, setSelectedBird, soundEnab
       </button>
 
       {/* Bottom Buttons */}
-      <div style={{ display: 'flex', gap: '15px' }}>
+      <div style={{ display: 'flex', gap: '15px', marginBottom: '20px' }}>
         {['🏆', '📊', '🛒', '⚙️'].map((icon, i) => (
           <button key={i} style={{ 
             background: ['#ffb300', '#29b6f6', '#81c784', '#ba68c8'][i], 
@@ -144,6 +144,17 @@ const MainMenu = ({ onStart, highScore, selectedBird, setSelectedBird, soundEnab
             {icon}
           </button>
         ))}
+      </div>
+
+      <div style={{ 
+        color: 'white', 
+        fontWeight: 'bold', 
+        textShadow: '2px 2px 0 #000', 
+        fontSize: '1rem',
+        marginTop: 'auto',
+        marginBottom: '10px'
+      }}>
+        Made by Krish
       </div>
     </div>
   );
