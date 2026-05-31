@@ -233,6 +233,21 @@ const Game = ({ onMenu, highScore, setHighScore, selectedBird, soundEnabled, set
 
       <ScoreBoard score={score} />
 
+      <div style={{
+        position: 'absolute',
+        bottom: '10px',
+        width: '100%',
+        textAlign: 'center',
+        color: 'rgba(255, 255, 255, 0.6)',
+        fontWeight: 'bold',
+        fontSize: '1rem',
+        textShadow: '1px 1px 0 #000',
+        pointerEvents: 'none',
+        zIndex: 10
+      }}>
+        Made by Krish
+      </div>
+
       {/* Bird */}
       {!isGameOver && (
         <div
